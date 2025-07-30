@@ -3,10 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>גדוד 5060 - אודות</title>
+  <title>גדוד 5060</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-d..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <meta property="og:title" content="גדוד 5060 - חטיבת כפיר" />
+  <meta property="og:description" content="היכנסו להכיר את גדוד 5060 – מבצעים, ערכים, לוחמים, ותרומה לקהילה" />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/e/e7/IDF_emblem.svg" />
+  <meta property="og:type" content="website" />
 </head>
 <body>
 
@@ -16,6 +26,11 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/IDF_emblem.svg/120px-IDF_emblem.svg.png" alt="לוגו" />
         <span>גדוד 5060</span>
       </div>
+
+      <button class="menu-toggle" aria-label="תפריט">
+        <i class="fas fa-bars"></i>
+      </button>
+
       <ul class="navbar-links">
         <li><a href="index.html"><i class="fas fa-info-circle"></i> אודות</a></li>
         <li><a href="missions.html"><i class="fas fa-bullseye"></i> משימות</a></li>
@@ -47,6 +62,21 @@
   </footer>
 
   <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".navbar-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    // סגירת התפריט בלחיצה על לינק
+    document.querySelectorAll(".navbar-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+
+    // כפתור חזרה למעלה
     const toTopBtn = document.getElementById("toTopBtn");
     window.onscroll = function () {
       toTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
