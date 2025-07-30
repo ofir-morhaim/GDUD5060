@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>גדוד 5060</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-d..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Meta for social media -->
+  <meta property="og:title" content="גדוד 5060 - חטיבת כפיר">
+  <meta property="og:description" content="היכנסו להכיר את גדוד 5060 – מבצעים, ערכים, לוחמים, ותרומה לקהילה">
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/e/e7/IDF_emblem.svg">
+  <meta property="og:type" content="website">
 </head>
 <body>
+
   <nav class="navbar">
     <div class="navbar-container">
       <div class="navbar-logo">
@@ -15,17 +23,18 @@
         <span>גדוד 5060</span>
       </div>
       <ul class="navbar-links">
-        <li><a href="#about">אודות</a></li>
-        <li><a href="#missions">משימות</a></li>
-        <li><a href="#contact">צור קשר</a></li>
+        <li><a href="#about"><i class="fas fa-info-circle"></i> אודות</a></li>
+        <li><a href="#missions"><i class="fas fa-bullseye"></i> משימות</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> צור קשר</a></li>
       </ul>
     </div>
   </nav>
 
   <header class="main-header">
     <h1>ברוכים הבאים לגדוד 5060</h1>
-    <p>עוד מילים בלה בלה בלה</p>
+    <p>חלק מחטיבת גבעתי | מבצעים, ערכים, תרומה וביטחון</p>
   </header>
+
   <main>
     <section class="card" id="about">
       <h2>אודות הגדוד</h2>
@@ -33,21 +42,41 @@
         גדוד 5060 הוא מהגדודים המובילים בחטיבת כפיר. הגדוד משתתף במבצעים מרכזיים, פועל ללא הפסקה לשמירה על ביטחון המדינה, דוגל ברעות, מקצועיות וערכי צה״ל.
       </p>
     </section>
+
     <section class="card highlights" id="missions">
       <h2>המשימות והערכים שלנו</h2>
       <ul>
-        <li>הגנה על תושבי ישראל</li>
-        <li>העצמה אישית ומקצועית ללוחמים</li>
-        <li>חדשנות בשדה הקרב</li>
+        <li><i class="fas fa-shield-alt"></i> הגנה על תושבי ישראל</li>
+        <li><i class="fas fa-hands-helping"></i> שיתוף פעולה עם הקהילה</li>
+        <li><i class="fas fa-user-graduate"></i> העצמה אישית ומקצועית ללוחמים</li>
+        <li><i class="fas fa-lightbulb"></i> חדשנות בשדה הקרב</li>
       </ul>
     </section>
+
     <section class="card contact" id="contact">
       <h2>צור קשר</h2>
-      <a href="mailto:contact@gdud5060.co.il" class="btn">שלח מייל</a>
+      <a href="mailto:contact@gdud5060.co.il" class="btn">
+        <i class="fas fa-paper-plane"></i> שלח מייל
+      </a>
     </section>
   </main>
+
+  <button id="toTopBtn" title="חזרה למעלה">⬆</button>
+
   <footer>
-    <p>&copy; גדוד 5060 | עיצוב בהשראת אופיר מורחיים האלוף</p>
+    <p>&copy;  גדוד 5060 | עיצוב בהשראת אופיר מורחיים האלוף</p>
   </footer>
+
+  <script>
+    // כפתור חזור למעלה
+    const toTopBtn = document.getElementById("toTopBtn");
+    window.onscroll = function () {
+      toTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+    toTopBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
+
 </body>
 </html>
