@@ -1,281 +1,55 @@
-body {
-  font-family: 'Heebo', Arial, sans-serif;
-  direction: rtl;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #ede7f6 0%, #e3f2fd 100%);
-  min-height: 100vh;
-  color: #22223b;
-  scroll-padding-top: 70px;
+/* אנימציית הופעה חלקה */
+body.loaded .main-header,
+body.loaded main,
+body.loaded footer {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-/* NAVBAR */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: linear-gradient(90deg, #673ab7 0%, #3949ab 100%);
-  box-shadow: 0 2px 10px rgba(103, 58, 183, 0.07);
-  height: 64px;
-  display: flex;
-  align-items: center;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 100%;
-}
-
-.navbar-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.navbar-logo img {
-  width: 36px;
-  height: 36px;
-  background: #fff;
-  border-radius: 50%;
-  padding: 5px;
-  box-shadow: 0 2px 8px rgba(39, 39, 82, 0.11);
-}
-
-.navbar-logo span {
-  color: #fff;
-  font-size: 1.18rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.navbar-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-links li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.05rem;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.navbar-links li a:hover,
-.navbar-links li a:focus {
-  color: #ffd600;
-}
-
-/* HEADER */
-.main-header {
-  margin-top: 64px;
-  background: linear-gradient(90deg, #9575cd 0%, #64b5f6 100%);
-  color: #fff;
-  text-align: center;
-  padding: 40px 15px 25px;
-  border-radius: 0 0 30px 30px;
-  box-shadow: 0 2px 14px rgba(103, 58, 183, 0.18);
-  margin-bottom: 32px;
-}
-
-h1 {
-  margin: 0 0 10px;
-  font-size: 2.1rem;
-  font-weight: 700;
-}
-
-.main-header p {
-  margin: 0;
-  font-size: 1.18rem;
-  font-weight: 400;
-}
-
-/* MAIN */
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 10px 40px;
-}
-
-/* CARD */
-.card {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 24px rgba(103, 58, 183, 0.11);
-  padding: 26px 20px 22px;
-  transition: box-shadow 0.3s;
-}
-
-.card:hover {
-  box-shadow: 0 8px 36px rgba(76, 42, 155, 0.18);
-}
-
-.card h2 {
-  color: #5e35b1;
-  font-size: 1.3rem;
-  margin-bottom: 16px;
-}
-
-.card ul {
-  padding-right: 18px;
-  margin: 0;
-  list-style: disc inside;
-}
-
-.card ul li {
-  margin-bottom: 8px;
-  font-size: 1.05rem;
-}
-
-.card ul li i {
-  margin-left: 8px;
-  color: #3949ab;
-}
-
-/* כתבות */
-#news article {
-  margin-bottom: 20px;
-}
-
-#news h3 {
-  font-size: 1.15rem;
-  color: #3949ab;
-  margin-bottom: 6px;
-}
-
-#news p {
-  margin: 0;
-  font-size: 1.02rem;
-  line-height: 1.5;
-}
-
-#news a {
-  color: #5e35b1;
-  font-weight: 600;
-  text-decoration: none;
-  margin-right: 4px;
-}
-
-#news a:hover {
-  text-decoration: underline;
-}
-
-/* BUTTON */
-.btn {
-  display: inline-block;
-  padding: 12px 30px;
-  background: linear-gradient(90deg, #7c4dff 0%, #64b5f6 100%);
-  color: #fff;
-  border: none;
-  border-radius: 28px;
-  font-size: 1.09rem;
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: 8px;
-  box-shadow: 0 2px 8px rgba(103, 58, 183, 0.12);
-  transition: background 0.2s, box-shadow 0.2s;
-}
-
-.btn:hover,
-.btn:focus {
-  background: linear-gradient(90deg, #3949ab 0%, #9575cd 100%);
-  box-shadow: 0 4px 18px rgba(103, 58, 183, 0.19);
-}
-
-/* FOOTER */
+.main-header,
+main,
 footer {
-  text-align: center;
-  color: #5e35b1;
-  font-size: 1rem;
-  margin: 24px 0 10px;
-  padding-bottom: 8px;
-  letter-spacing: 0.3px;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-/* כפתור חזרה למעלה */
-#toTopBtn {
-  position: fixed;
-  bottom: 22px;
-  left: 22px;
-  z-index: 999;
-  padding: 12px 16px;
-  background: #7e57c2;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+/* תפריט המבורגר */
+.hamburger {
   display: none;
-  transition: background 0.3s;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
 }
 
-#toTopBtn:hover {
-  background: #5e35b1;
+.hamburger div {
+  width: 22px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s;
 }
 
-/* רספונסיביות */
-@media (max-width: 600px) {
-  .navbar-container {
-    padding: 0 7px;
-  }
-
-  .navbar-logo img {
-    width: 28px;
-    height: 28px;
-    padding: 3px;
-  }
-
-  .navbar-logo span {
-    font-size: 1rem;
-  }
-
+@media (max-width: 768px) {
   .navbar-links {
-    gap: 12px;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    background: #673ab7;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+    display: none;
   }
 
-  .main-header {
-    border-radius: 0 0 18px 18px;
-    padding: 28px 6px 16px;
-    font-size: 1rem;
+  .navbar-links.active {
+    display: flex;
   }
 
-  h1 {
-    font-size: 1.3rem;
+  .hamburger {
+    display: flex;
   }
-
-  main {
-    max-width: 96vw;
-    padding: 0 2vw 18vw;
-  }
-
-  .card {
-    padding: 16px 12px;
-    border-radius: 13px;
-  }
-
-  .card h2 {
-    font-size: 1.15rem;
-  }
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-thumb {
-  background: #c3bce3;
-  border-radius: 8px;
 }
