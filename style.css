@@ -1,0 +1,30 @@
+body {
+    background: linear-gradient(135deg, #c9d6ff 0%, #e2e2e2 100%);
+    direction: rtl;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px;
+}
+
+h1 {
+    color: #24527a;
+}
+
+h2 {
+    color: #387ca4;
+    margin-top: 30px;
+}
+
+a {
+    color: #24527a;
+    text-decoration: underline;
+}
