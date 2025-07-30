@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>משימות הגדוד - גדוד 5060</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/IDF_emblem.svg/120px-IDF_emblem.svg.png" alt="לוגו" />
+      <span>גדוד 5060</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="index.html"><i class="fas fa-info-circle"></i> אודות</a></li>
+      <li><a href="missions.html"><i class="fas fa-bullseye"></i> משימות</a></li>
+      <li><a href="units.html"><i class="fas fa-users"></i> פלוגות</a></li>
+      <li><a href="news.html"><i class="fas fa-newspaper"></i> כתבות</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> צור קשר</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="main-header">
+  <h1>המשימות והערכים שלנו</h1>
+  <p>הגנה, שיתוף פעולה, העצמה וחדשנות</p>
+</header>
+
+<main>
+  <section class="card highlights" id="missions">
+    <ul>
+      <li><i class="fas fa-shield-alt"></i> הגנה על תושבי ישראל</li>
+      <li><i class="fas fa-hands-helping"></i> שיתוף פעולה עם הקהילה</li>
+      <li><i class="fas fa-user-graduate"></i> העצמה אישית ומקצועית ללוחמים</li>
+      <li><i class="fas fa-lightbulb"></i> חדשנות בשדה הקרב</li>
+    </ul>
+  </section>
+</main>
+
+<button id="toTopBtn" title="חזרה למעלה">⬆</button>
+
+<footer>
+  <p>&copy; גדוד 5060 | בהשראת אופיר מורחיים האלוף</p>
+</footer>
+
+<script>
+  const toTopBtn = document.getElementById("toTopBtn");
+  window.onscroll = function () {
+    toTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  };
+  toTopBtn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+</script>
+
+</body>
+</html>
