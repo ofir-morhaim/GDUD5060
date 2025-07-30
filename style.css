@@ -1,218 +1,181 @@
-/* בסיס */
-body {
-  font-family: 'Heebo', Arial, sans-serif;
-  direction: rtl;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #ede7f6 0%, #e3f2fd 100%);
-  min-height: 100vh;
-  color: #22223b;
-  scroll-padding-top: 70px;
-  transition: background 0.3s;
-}
+/* פונטים */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
-/* טעינה הדרגתית */
-.main-header,
-main,
-footer {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+body {
+  font-family: 'Heebo', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
+  animation: fadeInSlideDown 0.7s ease forwards;
 }
 
-body.loaded .main-header,
-body.loaded main,
-body.loaded footer {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes fadeInSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* תפריט ניווט */
+/* נביגציה */
 .navbar {
-  position: fixed;
+  background-color: #004d40;
+  color: white;
+  padding: 0.4rem 1rem;
+  position: sticky;
   top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: linear-gradient(90deg, #673ab7 0%, #3949ab 100%);
-  box-shadow: 0 2px 10px rgba(103,58,183,0.07);
-  height: 64px;
-  display: flex;
-  align-items: center;
+  z-index: 100;
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: auto;
 }
 
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.5rem;
 }
 
 .navbar-logo img {
-  width: 36px;
-  height: 36px;
-  background: #fff;
-  border-radius: 50%;
-  padding: 5px;
-  box-shadow: 0 2px 8px rgba(39,39,82,0.11);
+  height: 40px;
 }
 
 .navbar-logo span {
-  color: #fff;
-  font-size: 1.18rem;
-  font-weight: bold;
-  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  user-select: none;
 }
 
 .navbar-links {
-  display: flex;
-  gap: 24px;
   list-style: none;
-  margin: 0;
+  display: flex;
+  gap: 1rem;
   padding: 0;
+  margin: 0;
 }
 
 .navbar-links li a {
-  color: #fff;
+  color: white;
   text-decoration: none;
-  font-size: 1.05rem;
-  font-weight: 500;
-  transition: color 0.2s;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.3s ease;
 }
 
 .navbar-links li a:hover,
 .navbar-links li a:focus {
-  color: #ffd600;
-}
-
-/* תפריט המבורגר */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
-  cursor: pointer;
-}
-
-.hamburger div {
-  width: 22px;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
-  transition: all 0.3s;
+  background: #00796b;
 }
 
 /* כותרת ראשית */
 .main-header {
-  margin-top: 64px;
-  background: linear-gradient(90deg, #9575cd 0%, #64b5f6 100%);
-  color: #fff;
   text-align: center;
-  padding: 40px 15px 25px 15px;
-  border-radius: 0 0 30px 30px;
-  box-shadow: 0 2px 14px rgba(103,58,183,0.18);
-  margin-bottom: 32px;
+  padding: 2rem 1rem;
+  background: #e0f2f1;
+  color: #004d40;
+  user-select: none;
 }
 
-h1 {
-  margin: 0 0 10px 0;
-  font-size: 2.1rem;
-  font-weight: 700;
+.main-header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
 }
 
 .main-header p {
-  margin: 0;
-  font-size: 1.18rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  margin-top: 0;
 }
 
-/* תוכן עיקרי */
+/* תוכן עמוד */
 main {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  max-width: 650px;
-  margin: 0 auto;
-  padding: 0 10px 40px 10px;
+  max-width: 900px;
+  margin: 1rem auto 2rem auto;
+  padding: 0 1rem;
 }
 
-/* כרטיסים */
+/* כרטיסי תוכן */
 .card {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 24px rgba(103,58,183,0.11);
-  padding: 26px 20px 22px 20px;
-  transition: box-shadow 0.3s;
-}
-
-.card:hover {
-  box-shadow: 0 8px 36px rgba(76, 42, 155, 0.18);
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  user-select: text;
 }
 
 .card h2 {
-  color: #5e35b1;
-  font-size: 1.3rem;
-  margin-bottom: 12px;
+  color: #00796b;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
+/* רשימות */
 .card ul {
-  padding: 0 18px;
-  margin: 0;
-  list-style: disc inside;
+  list-style-type: none;
+  padding: 0;
 }
 
 .card ul li {
-  margin-bottom: 7px;
-  font-size: 1.05rem;
-}
-
-/* כתבות */
-article {
-  margin-bottom: 18px;
-}
-
-article h3 {
-  margin-bottom: 6px;
+  padding: 0.5rem 0;
   font-size: 1.1rem;
-  color: #3e1f92;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
-article a {
-  color: #3949ab;
+.card ul li i {
+  color: #004d40;
+  min-width: 20px;
+}
+
+/* קישורים בתוך הכתבות */
+.card a {
+  color: #00796b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card a:hover,
+.card a:focus {
   text-decoration: underline;
 }
 
-/* כפתורים */
+/* כפתור שליחה במייל */
 .btn {
-  display: inline-block;
-  padding: 12px 30px;
-  background: linear-gradient(90deg, #7c4dff 0%, #64b5f6 100%);
-  color: #fff;
-  border: none;
-  border-radius: 28px;
-  font-size: 1.09rem;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  background: #00796b;
+  color: white;
+  border-radius: 5px;
   text-decoration: none;
-  margin-top: 8px;
-  box-shadow: 0 2px 8px rgba(103,58,183,0.12);
-  transition: background 0.2s, box-shadow 0.2s;
+  font-weight: 700;
+  user-select: none;
+  transition: background 0.3s ease;
 }
 
-.btn:hover, .btn:focus {
-  background: linear-gradient(90deg, #3949ab 0%, #9575cd 100%);
-  box-shadow: 0 4px 18px rgba(103,58,183,0.19);
+.btn:hover,
+.btn:focus {
+  background: #004d40;
 }
 
 /* כפתור חזרה למעלה */
@@ -221,74 +184,48 @@ article a {
   position: fixed;
   bottom: 25px;
   left: 25px;
-  z-index: 999;
-  font-size: 20px;
-  background-color: #5e35b1;
+  z-index: 99;
+  font-size: 1.5rem;
+  background-color: #004d40;
   color: white;
   border: none;
+  padding: 0.5rem 0.7rem;
   border-radius: 50%;
-  padding: 12px 16px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: background 0.3s;
+  user-select: none;
+  transition: background-color 0.3s ease;
 }
 
 #toTopBtn:hover {
-  background-color: #4527a0;
+  background-color: #00796b;
 }
 
 /* פוטר */
 footer {
   text-align: center;
-  color: #5e35b1;
-  font-size: 1.01rem;
-  margin: 18px 0 10px 0;
-  padding-bottom: 8px;
-  letter-spacing: 0.3px;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  background: #e0f2f1;
+  color: #004d40;
+  user-select: none;
 }
 
-/* רספונסיביות */
-@media (max-width: 768px) {
+/* רספונסיב */
+@media (max-width: 600px) {
   .navbar-links {
-    position: absolute;
-    top: 64px;
-    right: 0;
-    background: #5e35b1;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 20px 0;
-    display: none;
+    gap: 0.5rem;
+    font-size: 0.9rem;
   }
 
-  .navbar-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .navbar-links li a {
+  .navbar-logo span {
     font-size: 1.1rem;
-    padding: 10px;
   }
 
-  .navbar-container {
-    padding: 0 12px;
+  .main-header h1 {
+    font-size: 1.6rem;
   }
 
   main {
-    max-width: 95vw;
-    padding: 0 4vw 30px 4vw;
+    padding: 0 0.5rem;
   }
-}
-
-/* גלילה */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-thumb {
-  background: #c3bce3;
-  border-radius: 8px;
 }
