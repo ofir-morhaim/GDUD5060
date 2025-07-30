@@ -6,7 +6,7 @@
   <title>גדוד 5060</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-d..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <meta property="og:title" content="גדוד 5060 - חטיבת כפיר">
   <meta property="og:description" content="היכנסו להכיר את גדוד 5060 – מבצעים, ערכים, לוחמים, ותרומה לקהילה">
   <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/e/e7/IDF_emblem.svg">
@@ -19,6 +19,11 @@
       <div class="navbar-logo">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/IDF_emblem.svg/120px-IDF_emblem.svg.png" alt="לוגו" />
         <span>גדוד 5060</span>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
       <ul class="navbar-links">
         <li><a href="#about"><i class="fas fa-info-circle"></i> אודות</a></li>
@@ -56,7 +61,7 @@
     <section class="card" id="units">
       <h2>הפלוגות והמפקדים</h2>
       <ul>
-        <li><strong>פלוגת פלס"ם</strong> – בפיקוד רסן דפנה ג'רסי</li>
+        <li><strong>פלוגת פלס"ם</strong> – בפיקוד רס"ן דפנה ג'רסי האלופה</li>
         <li><strong>פלוגה א</strong> – בפיקוד סרן אין לי מושג</li>
         <li><strong>פלוגה ב</strong> – בפיקוד סרן אין לי מושג</li>
         <li><strong>פלוגה ג</strong> – בפיקוד סרן אין לי מושג</li>
@@ -69,7 +74,7 @@
       <article>
         <h3>מבצע "מגן צפוני" – ההובלה של 5060</h3>
         <p>
-          במהלך החודש האחרון השתתף גדוד 5060 במבצע מורכב בצפון חברון. הלוחמים גילו אומץ לב יוצא דופן, סיימו את המשימה בהצלחה מלאה וללא נפגעים. 
+          במהלך החודש האחרון השתתף גדוד 5060 במבצע מורכב בצפון. הלוחמים גילו אומץ לב יוצא דופן, סיימו את המשימה בהצלחה מלאה וללא נפגעים.
           <a href="#">לכתבה המלאה</a>
         </p>
       </article>
@@ -93,7 +98,7 @@
   <button id="toTopBtn" title="חזרה למעלה">⬆</button>
 
   <footer>
-    <p>&copy; גדוד 5060 | בהשראת אופיר מורחיים האלוף</p>
+    <p>&copy; גדוד 5060 | בהשראת אופיר מורחיים הקינג</p>
   </footer>
 
   <script>
@@ -104,6 +109,19 @@
     toTopBtn.onclick = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
+
+    // תפריט המבורגר
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".navbar-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // אפקט טעינה
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
   </script>
 
 </body>
