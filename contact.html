@@ -3,57 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>צור קשר - גדוד 5060</title>
+  <title>יצירת קשר ותרומות - גדוד 5060</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-d..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="navbar-container">
-    <div class="navbar-logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/IDF_emblem.svg/120px-IDF_emblem.svg.png" alt="לוגו" />
-      <span>גדוד 5060</span>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/IDF_emblem.svg/120px-IDF_emblem.svg.png" alt="לוגו" />
+        <span>גדוד 5060</span>
+      </div>
+
+      <button class="menu-toggle" aria-label="תפריט">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="navbar-links">
+        <li><a href="index.html"><i class="fas fa-info-circle"></i> אודות</a></li>
+        <li><a href="missions.html"><i class="fas fa-bullseye"></i> משימות</a></li>
+        <li><a href="units.html"><i class="fas fa-users"></i> פלוגות</a></li>
+        <li><a href="news.html"><i class="fas fa-newspaper"></i> כתבות</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> צור קשר ותרומות</a></li>
+      </ul>
     </div>
-    <ul class="navbar-links">
-      <li><a href="index.html"><i class="fas fa-info-circle"></i> אודות</a></li>
-      <li><a href="missions.html"><i class="fas fa-bullseye"></i> משימות</a></li>
-      <li><a href="units.html"><i class="fas fa-users"></i> פלוגות</a></li>
-      <li><a href="news.html"><i class="fas fa-newspaper"></i> כתבות</a></li>
-      <li><a href="contact.html"><i class="fas fa-envelope"></i> צור קשר</a></li>
-    </ul>
-  </div>
-</nav>
+  </nav>
 
-<header class="main-header">
-  <h1>צור קשר</h1>
-  <p>צרו איתנו קשר לכל שאלה או פנייה</p>
-</header>
+  <header class="main-header">
+    <h1>צור קשר ותרומות</h1>
+  </header>
 
-<main>
-  <section class="card contact" id="contact">
-    <a href="mailto:contact@gdud5060.co.il" class="btn">
-      <i class="fas fa-paper-plane"></i> שלח מייל
-    </a>
-  </section>
-</main>
+  <main>
+    <section class="card contact-section">
+      <h2>יצירת קשר</h2>
+      <p>נשמח לשמוע ממך! תוכל לפנות אלינו בכל שאלה, הצעה או בקשה:</p>
+      <ul>
+        <li><i class="fas fa-phone"></i> טלפון: <a href="tel:+972501234567">050-1234567</a></li>
+        <li><i class="fas fa-envelope"></i> אימייל: <a href="mailto:contact@5060.co.il">contact@5060.co.il</a></li>
+        <li><i class="fas fa-map-marker-alt"></i> כתובת: רחוב הגדוד 5, חיפה</li>
+      </ul>
+    </section>
 
-<button id="toTopBtn" title="חזרה למעלה">⬆</button>
+    <section class="card donations-section">
+      <h2>תרומות ותמיכה</h2>
+      <p>תמיכתך חשובה לנו! אפשר לתרום לגדוד 5060 בדרכים הבאות:</p>
+      <ul>
+        <li><i class="fas fa-credit-card"></i> העברה בנקאית: <strong>בנק הפועלים 123456789</strong></li>
+        <li><i class="fas fa-wallet"></i> ארנק ביטקוין: <code>1A2b3C4d5E6f7G8h9J0k</code></li>
+        <li><i class="fas fa-donate"></i> תרומה דרך האתר: <a href="https://donate.5060.co.il" target="_blank" rel="noopener">לחץ כאן</a></li>
+      </ul>
+      <p>תודה על התמיכה והאמונה בנו!</p>
+    </section>
+  </main>
 
-<footer>
-  <p>&copy; גדוד 5060 | בהשראת אופיר מורחיים האלוף</p>
-</footer>
+  <button id="toTopBtn" title="חזרה למעלה">⬆</button>
 
-<script>
-  const toTopBtn = document.getElementById("toTopBtn");
-  window.onscroll = function () {
-    toTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-  };
-  toTopBtn.onclick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-</script>
+  <footer>
+    <p>&copy; גדוד 5060 | בהשראת אופיר מורחיים האלוף</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".navbar-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".navbar-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+
+    const toTopBtn = document.getElementById("toTopBtn");
+    window.onscroll = function () {
+      toTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+    toTopBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
 
 </body>
 </html>
